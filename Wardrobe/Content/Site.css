@@ -193,3 +193,15 @@ footer {
         display: none;
     }
 }
+
+.containerDetails{
+    margin:auto;
+}
+.detailBTN{
+    margin-top:20px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.carousel-indicators li {
+    visibility: hidden;
+}
