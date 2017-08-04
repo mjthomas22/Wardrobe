@@ -205,3 +205,13 @@ footer {
 .carousel-indicators li {
     visibility: hidden;
 }
+.control-label {
+    font-weight: 500;
+    font-family: 'Roboto Slab', serif;
+    color: black;
+}
+.glySize{
+    font-size:25px;
+    margin-left:40px;
+    margin-top:40px;
+}
