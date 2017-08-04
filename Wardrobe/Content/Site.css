@@ -1,6 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    font-family: 'Roboto Slab', serif;
+    color:black;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -22,10 +24,12 @@ select,
 textarea {
     max-width: 280px;
 }
+
 .glyphicon {
     font-family: 'Glyphicons Halflings' !important;
-    font-size:8px;
+    font-size: 8px;
 }
+
 .navbar-header {
     background: black;
     background: -webkit-linear-gradient(black, gray);
@@ -33,6 +37,7 @@ textarea {
     background: linear-gradient(black, gray);
     color: white;
 }
+
 .nav {
     background: black;
     background: -webkit-linear-gradient(black, gray);
@@ -40,6 +45,7 @@ textarea {
     background: linear-gradient(black, gray);
     color: white;
 }
+
 div.navbar.navbar-inverse.navbar-fixed-top {
     background: black;
     background: -webkit-linear-gradient(black, gray);
@@ -47,19 +53,23 @@ div.navbar.navbar-inverse.navbar-fixed-top {
     background: linear-gradient(black, gray);
     color: white;
 }
+
 .nav a {
     color: white !important;
     font-family: 'Libre Baskerville', serif;
 }
-.nav a:hover {
-    color: black !important;
-    background-color: black;
-    color: white !important;
-}
+
+    .nav a:hover {
+        color: black !important;
+        background-color: black;
+        color: white !important;
+    }
+
 .navbar-brand {
     font-family: 'Indie Flower', cursive;
-    font-size:35px;
+    font-size: 35px;
 }
+
 .dropdown-menu {
     background: black;
     background: -webkit-linear-gradient(black, gray);
@@ -67,8 +77,40 @@ div.navbar.navbar-inverse.navbar-fixed-top {
     background: linear-gradient(black, gray);
     color: white;
 }
-.dropdown-menu a:hover{
-    color:black !important;
-    background-color:black;
-}
 
+    .dropdown-menu a:hover {
+        color: black !important;
+        background-color: black;
+    }
+
+#homeHeader {
+    background-image: url('Images/Closet.jpg');
+    background-size: cover;
+    padding-bottom:150px;
+}
+#homeh1 {
+    text-align: center;
+}
+.lead{
+    font-style:italic;
+    font-weight:400;
+    margin-top:80px;
+}
+#headerBTN {
+    text-align: right;
+    background: black;
+    background: -webkit-linear-gradient(black, gray);
+    background: -moz-linear-gradient(black, gray);
+    background: linear-gradient(black, gray);
+    color: white;
+    border: 0;
+    height: 40px;
+    width: 150px;
+    margin: 20px -80px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+}
+footer{
+    text-align:center;
+}
