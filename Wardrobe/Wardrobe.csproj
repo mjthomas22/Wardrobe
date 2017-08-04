@@ -224,6 +224,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Accessories\Hat.jpg" />
+    <Content Include="Content\Images\Accessories\volcom.jpg" />
     <Content Include="Content\Images\Bottoms\Levi.jpg" />
     <Content Include="Content\Images\Bottoms\pants.jpg" />
     <Content Include="Content\Images\Closet.jpg" />

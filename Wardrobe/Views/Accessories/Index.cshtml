@@ -3,61 +3,49 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.AccessoriesName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AccessoriesPhoto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AccessoryType.AccessoryType1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Color.Color1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Occasion.Occasion1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Season.Season1)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.AccessoriesName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AccessoriesPhoto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AccessoryType.AccessoryType1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Color.Color1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Occasion.Occasion1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Season.Season1)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AccessoriesID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AccessoriesID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AccessoriesID })
-        </td>
-    </tr>
+@{
+    int numberOfSlides = Model.Count();
 }
+<h2 class="wardrobeHeader">Accessories</h2>
+<span><a href="@Url.Action("Index","Accessories")" class="btn btn-primary btn-lg wardBTN">All Accessories &raquo;</a></span>
 
-</table>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        @{
+            for (int i = 1; i <= numberOfSlides; i++)
+            {
+                <li data-target="#myCarousel" data-slide-to="@i;"></li>
+            }
+        }
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img class="carouselIMG" src="~/Content/Images/Accessories/Hat.jpg" alt="Los Angeles">
+            <a href="@Url.Action("Create","Accessories")" class="btn btn-primary btn-lg carouselBTN">Add Accessories &raquo;</a>
+        </div>
+        @foreach (var item in Model)
+        {
+            <div class="item">
+                <img class="carouselIMG" src="@Html.DisplayFor(modelItem => item.AccessoriesPhoto)" alt="">
+                <a href="@Url.Action("Create","Accessories")" class="btn btn-primary btn-lg carouselBTN">Add Accessories &raquo;</a>
+                <span><a href="@Url.Action("Edit", "Accessories", new { id=item.AccessoriesID })" class="btn btn-primary btn-lg inCarouselBTN">Edit &raquo;</a></span>
+                <span><a href="@Url.Action("Details", "Accessories", new { id=item.AccessoriesID })" class="btn btn-primary btn-lg inCarouselBTN">View &raquo;</a></span>
+                <span><a href="@Url.Action("Delete", "Accessories", new { id=item.AccessoriesID })" class="btn btn-primary btn-lg inCarouselBTN">Delete &raquo;</a></span>
+            </div>
+        }
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
