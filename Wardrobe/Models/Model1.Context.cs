@@ -37,5 +37,6 @@ namespace Wardrobe.Models
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Top> Tops { get; set; }
         public virtual DbSet<TopsType> TopsTypes { get; set; }
+        
     }
 }
