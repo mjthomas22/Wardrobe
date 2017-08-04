@@ -226,7 +226,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\Closet.jpg" />
     <Content Include="Content\Images\Logo.png" />
+    <Content Include="Content\Images\Tops\blackshirt.jpg" />
     <Content Include="Content\Images\Tops\Flash.jpg" />
+    <Content Include="Content\Images\Tops\TMNT.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

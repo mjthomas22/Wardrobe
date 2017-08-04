@@ -122,6 +122,7 @@ div.navbar.navbar-inverse.navbar-fixed-top {
     background: linear-gradient(black, gray);
     color: white;
     border: 0;
+    margin-bottom:60px;
 }
 .homeBlock {
     text-align: center;
@@ -141,4 +142,54 @@ footer {
     font-family: 'Indie Flower', cursive;
     font-size: 35px;
     text-align:center;
+}
+
+.carouselIMG{
+    height:300px;
+    text-align:center;
+}
+.carousel-inner > .item > img {
+    height: 360px;
+    margin:auto;
+}
+
+.bottomBTN {
+    text-align: right;
+    background: black;
+    background: -webkit-linear-gradient(black, gray);
+    background: -moz-linear-gradient(black, gray);
+    background: linear-gradient(black, gray);
+    color: white;
+    border: 0;
+    margin-top: 60px;
+}
+.carouselBTN {
+    margin-left: 300px;
+    text-align: right;
+    background: black;
+    background: -webkit-linear-gradient(black, gray);
+    background: -moz-linear-gradient(black, gray);
+    background: linear-gradient(black, gray);
+    color: white;
+    border: 0;
+}
+.inCarouselBTN {
+    text-align: right;
+    background: black;
+    background: -webkit-linear-gradient(black, gray);
+    background: -moz-linear-gradient(black, gray);
+    background: linear-gradient(black, gray);
+    color: white;
+    border: 0;
+    margin-left:40px;
+}
+@media only screen and (max-width: 1026px) {
+    .inCarouselBTN {
+        display: none;
+    }
+}
+@media only screen and (max-width: 760px) {
+    .carouselBTN {
+        display: none;
+    }
 }

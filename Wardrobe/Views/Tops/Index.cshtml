@@ -3,7 +3,9 @@
 @{
     ViewBag.Title = "Index";
 }
-
+@{ 
+    int numberOfSlides = Model.Count();
+}
 <h2 class="wardrobeHeader">Tops</h2>
 <span><a href="@Url.Action("Index","Tops")" class="btn btn-primary btn-lg wardBTN">All Tops &raquo;</a></span>
 
@@ -11,23 +13,30 @@
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
+        @{
+            for (int i = 1; i <= numberOfSlides; i++)
+            {
+                <li data-target="#myCarousel" data-slide-to="@i;"></li>
+            }
+        }
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
         <div class="item active">
-            <img src="la.jpg" alt="Los Angeles">
+            <img class="carouselIMG"src="~/Content/Images/Tops/blackshirt.jpg" alt="Los Angeles">
+            <a href="@Url.Action("Create","Tops")" class="btn btn-primary btn-lg carouselBTN">Add Top &raquo;</a>
         </div>
-
+@foreach (var item in Model)
+{
         <div class="item">
-            <img src="chicago.jpg" alt="Chicago">
+          <img class="carouselIMG" src="@Html.DisplayFor(modelItem => item.TopsPhoto)" alt="">
+         <a href="@Url.Action("Create","Tops")" class="btn btn-primary btn-lg carouselBTN">Add Top &raquo;</a>
+            <span><a href="@Url.Action("Edit", "Tops", new { id=item.TopsID })" class="btn btn-primary btn-lg inCarouselBTN">Edit &raquo;</a></span>
+            <span><a href="@Url.Action("Details", "Tops", new { id=item.TopsID })" class="btn btn-primary btn-lg inCarouselBTN">View &raquo;</a></span>
+            <span><a href="@Url.Action("Delete", "Tops", new { id=item.TopsID })" class="btn btn-primary btn-lg inCarouselBTN">Delete &raquo;</a></span>
         </div>
-
-        <div class="item">
-            <img src="ny.jpg" alt="New York">
-        </div>
+}
     </div>
 
     <!-- Left and right controls -->
@@ -40,58 +49,3 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TopsName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TopsPhoto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Color.Color1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Occasion.Occasion1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Season.Season1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TopsType.Type)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TopsName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TopsPhoto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Color.Color1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Occasion.Occasion1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Season.Season1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TopsType.Type)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TopsID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TopsID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TopsID })
-        </td>
-    </tr>
-}
-
-</table>
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
