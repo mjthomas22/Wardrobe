@@ -5,19 +5,33 @@
 }
 
 <h2 class="wardrobeHeader">Details</h2>
+
 <div class="containerDetails">
     <div class="container ">
         <div class="row ">
+
+            @*Empty Divs used to create spacing*@
+            
             <div class="col-md-2"></div>
+
+            @*Divs inside of divs to create more information one side becareful which divs are messed with*@
+
             <div class="col-md-8">
                 <div class="panel panel-default  panel--styled">
                     <div class="panel-body">
+
+                        @*Items image shows to the left inside a card*@
+
                         <div class="col-md-12 panelTop">
                             <div class="col-md-4">
                                 <img class="img-responsive" id="stars" src=@Html.DisplayFor(model => model.ShoePhoto) />
                             </div>
+
                             <div class="col-md-4">
                             </div>
+
+                            @*All of the items information is shifted to the right while inside a card*@
+
                             <div class="col-md-4">
                                 <h4>@Html.DisplayFor(model => model.ShoeName)</h4>
                                 <h4>Style: @Html.DisplayFor(model => model.ShoeType.ShoeType1)</h4>
@@ -26,6 +40,8 @@
                                 <h4>Season: @Html.DisplayFor(model => model.Season.Season1)</h4>
                             </div>
                         </div>
+
+                        @*Buttons on bottom of card to allow editing and going back to prev. page*@
 
                         <div class="col-md-12 panelBottom">
                             <div class="col-md-4 ">
@@ -41,7 +57,9 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-2"></div>
+
         </div>
     </div>
 </div>

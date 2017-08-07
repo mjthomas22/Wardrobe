@@ -10,6 +10,8 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+    
+    // Form for user to enter information for new item in wardrobe
 
     <div class="col-md-8">
         <div class="form-horizontal">
@@ -70,6 +72,10 @@
             </div>
         </div>
     </div>
+
+    //This is the only area a user can add different styles or seasons etc. that are not alreaedy list in an effort to limit the users exposure
+    //To try to limit user errors.
+
     <div class="col-md-4">
         <h4>Add styles  <a href="@Url.Action("Create","AccessoryTypes")"><span class="glyphicon glyphicon-plus glySize"></span></a></h4>
         <h4>Add colors  <a href="@Url.Action("Create","Colors")"><span class="glyphicon glyphicon-plus glySize"></span></a></h4>

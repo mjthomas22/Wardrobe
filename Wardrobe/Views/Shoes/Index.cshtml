@@ -4,16 +4,24 @@
     ViewBag.Title = "Index";
 }
 
+@*Added variable to count number of items in model four carousel*@
+
 @{
     int numberOfSlides = Model.Count();
 }
+
 <h2 class="wardrobeHeader">Shoes</h2>
+
 <span><a href="@Url.Action("Index","Shoes")" class="btn btn-primary btn-lg wardBTN">All Shoes &raquo;</a></span>
+@*Was going to added other functionality to be able to filter through various options*@
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+
+        @*Created for loop to count and create the number of slides needed to auto fill carousel with wardrobe items*@
+
         @{
             for (int i = 1; i <= numberOfSlides; i++)
             {
@@ -28,6 +36,9 @@
             <img class="carouselIMG" src="~/Content/Images/shoes/Shoe.jpg" alt="Los Angeles">
             <a href="@Url.Action("Create","Shoes")" class="btn btn-primary btn-lg carouselBTN">Add Shoes &raquo;</a>
         </div>
+
+        @*Foreach loop to fill the carousel slides with the appropriate picture and buttons for that item.*@
+
         @foreach (var item in Model)
         {
             <div class="item">
@@ -38,6 +49,7 @@
                 <span><a href="@Url.Action("Delete", "Shoes", new { id=item.ShoeID })" class="btn btn-primary btn-lg inCarouselBTN">Delete &raquo;</a></span>
             </div>
         }
+
     </div>
 
     <!-- Left and right controls -->
